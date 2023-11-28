@@ -15,13 +15,13 @@ let alunos = [
     { nome: "Davizao", email: "davi@msn.com", telefone: 21975584073, profissao: "frontend" },
   
 ];
-
 // carregar os dados do array na tabela
 window.onload = (event) => {
     let tbody = document.querySelector("#mytable");
 alunos.forEach((aluno, index) => {
+    
     let tr = document.createElement("tr");
-
+    tr.id = index +1;
     let tdCod = document.createElement("td");
     let tdNome = document.createElement("td");
     let tdEmail = document.createElement("td");
@@ -56,4 +56,41 @@ let row = id.parentNode.parentNode.id;
 row = document.getElementById(row);
 row.parentNode.removeChild(row);
 return false
+}
+
+function adicionar (){
+//Definindo as vareaveis e recebendo os dados
+let nome = document.getElementById('nome').value;
+let email = document.getElementById('email').Value;
+let telefone = document.getElementById('telefone').value;
+let profissao = document.getElementById('profissao').value;
+let table = document.getElementById('mytable');
+
+//calculando o tamanho da tabela
+let tableSize = table.rows.lenght;
+
+//inserindo uma linha abaixo da tabela
+let row = table.insertRow(tableSize);
+let col1 = row.insertCell(0);
+let col2 = row.insertCell(1);
+let col3 = row.insertCell(2);
+let col4 = row.insertCell(3);
+let col5 = row.insertCell(4);
+let col6 = row.insertCell(5);
+
+//adicinando o id no elemento a ser criado
+row.id = tableSize;
+
+  //Criando o codigo do botão para remover a linha
+let btnCode = "<button class='remove-btn' onlick='remover(this)'>Remover</button>"
+
+//preenchendo as celulas da linha
+col1.innerHTML = tableSize;
+col2.innerHTML = nome;
+col3.innerHTML = email;
+col4.innerHTML = telefone;
+col5.innerHTML = profissao;
+col6.innerHTML = btnCode;
+
+
 }
