@@ -51,3 +51,9 @@ alunos.forEach((aluno, index) => {
 
 }
 
+function remover (id){
+let row = id.parentNode.parentNode.id;
+row = document.getElementById(row);
+row.parentNode.removeChild(row);
+return false
+}
