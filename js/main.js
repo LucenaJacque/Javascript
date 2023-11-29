@@ -92,5 +92,13 @@ col4.innerHTML = telefone;
 col5.innerHTML = profissao;
 col6.innerHTML = btnCode;
 
+//limpando os campos de inserção dos dados 
+document.getElementById('nome').value = "";
+document.getElementById('email').Value = "";
+document.getElementById('telefone').value = "";
+document.getElementById('profissao').value = "";
 
+//retornando 'false' para impedrir o reload da pagina
+
+return false
 }
