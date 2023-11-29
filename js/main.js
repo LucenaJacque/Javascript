@@ -67,7 +67,7 @@ let profissao = document.getElementById('profissao').value;
 let table = document.getElementById('mytable');
 
 //calculando o tamanho da tabela
-let tableSize = table.rows.lenght;
+let tableSize = table.rows.length;
 
 //inserindo uma linha abaixo da tabela
 let row = table.insertRow(tableSize);
