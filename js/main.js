@@ -44,6 +44,7 @@ alunos.forEach((aluno, index) => {
     tr.appendChild(tdBotao);
     // 4 momento adicionar o tr no tbody
     tbody.appendChild(tr);
+    initPieChart();
 });
 
 }
@@ -93,4 +94,27 @@ function adicionar(){
 //Retornando 'false' para impedir o reload da pagina
     return false
 
-}
+};
+
+const initPieChart = () => {
+    const ctx = document.getElementById("myChart");
+    const data = {
+        labels: ['Frontend', 'Backend', 'Fullstack','Mobile'],
+        datasets: [
+            {
+                label: 'Quantidade',
+                data: [10, 20, 50, 20],
+                backgroundColor:  ['pink', 'lightblue', 'lightgreen', 'orange'],
+                hoverOffset: 4
+            }
+        ]
+    }
+
+    const pieChart = new Chart(
+        ctx,
+        {
+            type: 'pie',
+            data: data
+        }
+    );
+};
