@@ -17,7 +17,7 @@ let alunos = [
 
 // carregar os dados do array na tabela
 window.onload = (event) => {
-    let tbody = document.querySelector("#myTable");
+    let tbody = document.querySelector("#tableBody");
 alunos.forEach((aluno, index) => {
     // 1 momento
     let tr = document.createElement("tr");
@@ -34,7 +34,7 @@ alunos.forEach((aluno, index) => {
     tdEmail.textContent = aluno.email;
     tdTelefone.textContent = aluno.telefone;
     tdProfissao.textContent = aluno.profissao;
-    tdBotao.innerHTML = `<button class="btn-remover" onclick="remover(this)" >Remover</button>`
+    tdBotao.innerHTML = `<button class="btn btn-danger" onclick="remover(this)" >Remover</button>`
 // 3momento adicionar os elementos na row
     tr.appendChild(tdCod);
     tr.appendChild(tdNome);
@@ -61,7 +61,7 @@ function adicionar(){
     let email =document.getElementById('email').value;
     let telefone =document.getElementById('telefone').value;
     let profissao = document.getElementById('profissao').value;
-    let table = document.getElementById('myTable');
+    let table = document.getElementById('tableBody');
 
     //Calculando o tamanho da Tabela
     let tableSize = table.rows.length;
@@ -76,7 +76,7 @@ function adicionar(){
      //Adicionando o id no elemento a ser criado
     row.id = tableSize;
     //Criando o codigo do botão para remover a linha
-    let btnCode = "<button class='remove-btn' onclick='remover(this)'>Remover</button>";
+    let btnCode = "<button class='btn btn-danger' onclick='remover(this)'>Remover</button>";
   //Preenchendo as celulas da linha
   console.log(tableSize)
     col1.innerHTML = tableSize;
